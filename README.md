@@ -6,7 +6,6 @@ A quick example of how to use liquibase, maven assembly, and logback with Mapped
 
 * Quick summary
 * Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up? ###
 
