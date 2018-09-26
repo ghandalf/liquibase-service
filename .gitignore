@@ -1,0 +1,40 @@
+### Project specific ###
+mvnw
+mvnw.cmd
+scripts/settings.xml
+scripts/settings-security.xml
+
+### Eclipse ###
+.metatdata/
+.mvn/
+.settings
+doc
+RemoteSystemsTempFiles
+.classpath
+.project
+target/
+logs/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    
+    <changeSet id="Create-0001" author="Francis Ouellet" dbms="oracle, hsqldb">
+		<comment>First creation of table Item</comment>
+		<sql dbms="oracle" endDelimiter="">
+		create table Item (
+				id int not null,
+				sku int,
+				name varchar(36),
+				description varchar(56),
+				price float,
+				primary key (id)
+			)
+		</sql>
+		<rollback>drop table Item</rollback>
+	</changeSet>
+
+	<changeSet id="Tag_0.0.1" author="Francis Ouellet">
+		<tagDatabase tag="0.0.1" />
+	</changeSet>
+	
+</databaseChangeLog>

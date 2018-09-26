@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    
+    <changeSet id="insert-0001" author="Francis Ouellet" dbms="oracle, hsqldb">
+        <comment>Insert first data</comment>
+        <sql>
+			insert into Item(id, sku, name, description, price)
+			values (233, 233233233, 'SamsungV233', 'Samsung 233 Smart TV', 233.00);
+			insert into Item(id, sku, name, description, price)
+			values (244, 244244244, 'SamsungV244', 'Samsung 244 Smart TV', 244.00);
+			insert into Item(id, sku, name, description, price)
+			values (255, 255255255, 'SamsungV255', 'Samsung 255 Smart TV', 255.00);
+			insert into Item(id, sku, name, description, price)
+			values (266, 266266266, 'SamsungV266', 'Samsung 266 Smart TV', 266.00);
+		</sql>
+		<rollback>
+			<sql>
+				delete from Item where id=233;
+				delete from Item where id=244;
+				delete from Item where id=255;
+				delete from Item where id=266;
+			</sql>
+		</rollback>
+    </changeSet>
+
+    <changeSet id="Tag_0.0.2" author="Francis Ouellet">
+		<tagDatabase tag="0.0.2" />
+	</changeSet>
+	
+</databaseChangeLog>

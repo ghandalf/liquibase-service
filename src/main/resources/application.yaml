@@ -1,0 +1,33 @@
+spring:
+  profiles.active: dev
+  application.name: liquibase-service
+liquibase: 
+  change-log: classpath:liquibase/changelog-master.xml  
+---
+spring:
+  profiles: dev
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: tutori
+    password: tutori
+  jpa:
+    database: oracle
+    show-sql: true
+liquibase:
+  enabled: true
+  drop-first: false
+  contexts: dev
+---
+spring:
+  profiles: test
+  datasource:
+    driverClassName: org.hsqldb.jdbcDriver
+    url: jdbc:hsqldb:file:logs/hsqlDB
+    username: 
+    password: 
+  jpa:
+    database: hsqldb
+    show-sql: true
+liquibase:
+  enabled: false
