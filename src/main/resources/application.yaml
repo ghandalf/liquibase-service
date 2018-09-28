@@ -1,19 +1,22 @@
 spring:
   profiles.active: dev
   application.name: liquibase-service
-liquibase: 
-  change-log: classpath:liquibase/changelog-master.xml  
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.xml
+server:
+  port: 8012
 ---
 spring:
   profiles: dev
   datasource:
-    driverClassName: oracle.jdbc.driver.OracleDriver
+    driverClassName: oracle.jdbc.OracleDriver
     url: jdbc:oracle:thin:@localhost:1521:xe
     username: tutori
     password: tutori
   jpa:
     database: oracle
     show-sql: true
+#    open-in-view: false
 liquibase:
   enabled: true
   drop-first: false
